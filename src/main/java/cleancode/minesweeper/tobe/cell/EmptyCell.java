@@ -1,7 +1,7 @@
 package cleancode.minesweeper.tobe.cell;
 
 public class EmptyCell implements Cell {
-    private static final String EMPTY_SIGN = "□";
+    private static final String EMPTY_SIGN = "■";
     private final CellState cellState = CellState.initialize();
 
     @Override
