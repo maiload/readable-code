@@ -76,6 +76,11 @@ public class GameBoard {
         board[position.getRowIndex()][position.getColIndex()] = cell;
     }
 
+    public CellSnapshot getSnapshot(CellPosition cellPosition) {
+        Cell cell = findCell(cellPosition);
+        return cell.getSnapshot();
+    }
+
     public void openSurroundedCells(CellPosition cellPosition) {
         if (isOpenedCell(cellPosition)) {
             return;
@@ -99,11 +104,11 @@ public class GameBoard {
         Cell cell = findCell(cellPosition);
         return cell.hasLandMineCount();
     }
-
     private boolean isOpenedCell(CellPosition cellPosition) {
         Cell cell = findCell(cellPosition);
         return cell.isOpened();
     }
+
     private int countNearByLandMines(CellPosition cellPosition) {
         int rowSize = getRowSize();
         int colSize = getColSize();
@@ -135,11 +140,6 @@ public class GameBoard {
 
     public int getColSize() {
         return board[0].length;
-    }
-
-    public String getSign(CellPosition cellPosition) {
-        Cell cell = findCell(cellPosition);
-        return cell.getSign();
     }
 
     private Cell findCell(CellPosition cellPosition) {
