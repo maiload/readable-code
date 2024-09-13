@@ -3,14 +3,18 @@ package cleancode.minesweeper.tobe.minesweeper.io;
 import cleancode.minesweeper.tobe.minesweeper.board.GameBoard;
 import cleancode.minesweeper.tobe.minesweeper.board.cell.CellSignFinder;
 import cleancode.minesweeper.tobe.minesweeper.board.cell.CellSnapshot;
-import cleancode.minesweeper.tobe.minesweeper.io.sign.CellSignProvider;
 import cleancode.minesweeper.tobe.minesweeper.board.position.CellPosition;
+import cleancode.minesweeper.tobe.minesweeper.io.sign.CellSignProvider;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
 public class ConsoleOutputHandler implements OutputHandler {
     private static final CellSignFinder cellSignFinder = new CellSignFinder();
+
+    private static String getJoin(List<String> alphabets) {
+        return String.join(" ", alphabets);
+    }
 
     @Override
     public void showGameStartComments() {
@@ -47,10 +51,6 @@ public class ConsoleOutputHandler implements OutputHandler {
                 .toList();
         String joiningAlphabets = getJoin(alphabets);
         return joiningAlphabets;
-    }
-
-    private static String getJoin(List<String> alphabets) {
-        return String.join(" ", alphabets);
     }
 
     @Override

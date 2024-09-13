@@ -28,8 +28,4 @@ public class CellState {
     public void open() {
         this.isOpened = true;
     }
-
-    public boolean isChecked() {
-        return isFlagged || isOpened;
-    }
 }

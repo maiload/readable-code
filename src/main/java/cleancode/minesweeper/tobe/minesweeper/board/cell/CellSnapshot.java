@@ -19,15 +19,19 @@ public class CellSnapshot {
     public static CellSnapshot ofEmpty() {
         return of(CellSnapshotStatus.EMPTY, 0);
     }
+
     public static CellSnapshot ofFlag() {
         return of(CellSnapshotStatus.FLAG, 0);
     }
+
     public static CellSnapshot ofLandMine() {
         return of(CellSnapshotStatus.LAND_MINE, 0);
     }
+
     public static CellSnapshot ofNumber(int nearbyLandMineCount) {
         return of(CellSnapshotStatus.NUMBER, nearbyLandMineCount);
     }
+
     public static CellSnapshot ofUnchecked() {
         return of(CellSnapshotStatus.UNCHECKED, 0);
     }
